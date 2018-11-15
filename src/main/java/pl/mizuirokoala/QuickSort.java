@@ -24,14 +24,14 @@ public class QuickSort {
     private static int partition(Comparable[] a, int lo, int hi) {
 
         int i=lo,j=hi+1;
-        Comparable comparable=a[lo];
+        Comparable v=a[lo];
         while (true){
-            while (lessThan(a[++i], comparable)){
+            while (less(a[++i], v)){
                 if (i==hi){
                     break;
                 }
             }
-            while (lessThan(comparable, a[--j])){
+            while (less(v, a[--j])){
                 if (j==lo){
                     break;
                 }
@@ -44,8 +44,8 @@ public class QuickSort {
         exch(a,lo,j);
         return j;
     }
-    private static boolean lessThan(Comparable comparable, Comparable comparableAfter){
-        return comparable.compareTo(comparableAfter)<0;
+    private static boolean less(Comparable v, Comparable w){
+        return v.compareTo(w)<0;
     }
 
     private static void exch(Comparable[]a,int i,int j){
@@ -61,7 +61,7 @@ public class QuickSort {
     }
     public static boolean isSorted(Comparable[] a){
         for (int i=0;i<a.length;i++){
-            if (lessThan(a[i], a[i-1])){
+            if (less(a[i], a[i-1])){
                 return false;
             }
         }
