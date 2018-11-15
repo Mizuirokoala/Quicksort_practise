@@ -1,11 +1,12 @@
 package pl.mizuirokoala;
 
-import algs4.edu.princeton.cs.algs4.In;
-import algs4.edu.princeton.cs.algs4.StdOut;
-import algs4.edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.StdRandom;
 
 
-public class QuickSort {
+
+public class Quick {
     public static void sort(Comparable[] word) {
         StdRandom.shuffle(word);
         sort(word, 0, word.length - 1);
@@ -78,3 +79,6 @@ public class QuickSort {
         show(a);
     }
 }
+
+
+
